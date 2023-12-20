@@ -1,0 +1,134 @@
+/* 小喇叭特效 */
+@keyframes scaleDraw {
+
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+  0% {
+    transform: scale(1);
+    /*开始为原始大小*/
+  }
+
+  25% {
+    transform: scale(1.2);
+    /*放大1.2倍*/
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.icon-laba {
+  position         : relative;
+  font-size        : 2rem !important;
+  display          : inline-block;
+  color            : #d81e06;
+  vertical-align   : sub;
+  /* 关键帧名称 动画所花费的时间 动画的速度曲线 动画播放的次数 */
+  -webkit-animation: scaleDraw 1s ease-in-out infinite !important;
+  animation        : scaleDraw 1s ease-in-out infinite !important;
+}
+
+.typed-cursor {
+  opacity          : 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation   : blink 0.7s infinite;
+  animation        : blink 0.7s infinite;
+  font-size        : 20px;
+  font-weight      : bolder;
+  padding-left     : 5px;
+}
+
+/* 光标特效 */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.notice_board {
+  margin : 20px 0 !important;
+  padding: 0 !important;
+}
+
+.notice {
+  border-radius: 0.5rem;
+  padding      : 8px 10px 10px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .notice {
+    padding: 10px;
+  }
+
+  .icon-laba {
+    top: 1px;
+  }
+}
