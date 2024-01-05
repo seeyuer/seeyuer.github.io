@@ -1,1 +1,23 @@
-!function(){var t=new Date("2021/11/27 21:00:00");function e(){var e=new Date;e.setTime(e.getTime()+250);var n=e-t,a=Math.floor(n/864e5),r=Math.floor(n%864e5/36e5),o=Math.floor(n%36e5/6e4),i=Math.round(n%6e4/1e3);document.getElementById("timeDate").innerHTML=`本站已运行&nbsp;${a}&nbsp;天&nbsp;`,document.getElementById("times").innerHTML=`${r.toString().padStart(2,"0")}&nbsp;小时&nbsp;${o.toString().padStart(2,"0")}&nbsp;分&nbsp;${i.toString().padStart(2,"0")}&nbsp;秒`,document.getElementById("times").style.marginLeft="-3px"}e(),setInterval(e,1e3)}();
+!(function () {
+  var start = new Date("2021/11/27 21:00:00");
+
+  function update() {
+    var now = new Date();
+    now.setTime(now.getTime() + 250);
+
+    var timeDiff = now - start;
+
+    var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.round((timeDiff % (1000 * 60)) / 1000);
+
+    document.getElementById("timeDate").innerHTML = `本站已运行&nbsp;${days}&nbsp;天&nbsp;`;
+    // document.getElementById("timeDate").innerHTML = `&nbsp;${days}&nbsp;天&nbsp;`;
+    document.getElementById("times").innerHTML = `${hours.toString().padStart(2, '0')}&nbsp;小时&nbsp;${minutes.toString().padStart(2, '0')}&nbsp;分&nbsp;${seconds.toString().padStart(2, '0')}&nbsp;秒`;
+    document.getElementById("times").style.marginLeft = "-3px";
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
