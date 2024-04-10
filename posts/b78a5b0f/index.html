@@ -1,0 +1,1070 @@
+<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="auto"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.webp?v=d2ed5cc599"><link rel="icon" href="/img/favicon.webp?v=d2ed5cc599"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="author" content="See Yue"><meta name="keywords" content="望月,博客,Blog,Hexo,工具,资源分享,教程,软件推荐,折腾"><meta name="description" content="Fluid v1.9.7 修改内容记录，大部分修改都涉及主题源码。"><meta property="og:type" content="article"><meta property="og:title" content="Fluid 主题修改记录"><meta property="og:url" content="https://blog.seeyue.top/posts/b78a5b0f/index.html"><meta property="og:site_name" content="望月家"><meta property="og:description" content="Fluid v1.9.7 修改内容记录，大部分修改都涉及主题源码。"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2024-03-03T04:14:33.000Z"><meta property="article:modified_time" content="2024-03-19T02:50:54.000Z"><meta property="article:author" content="See Yue"><meta property="article:tag" content="Fluid"><meta name="twitter:card" content="summary_large_image"><meta name="referrer" content="no-referrer-when-downgrade"><title>Fluid 主题修改记录 - 望月家</title><link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css"><link rel="stylesheet" href="/css/main.css?v=7646e5654d"><link id="highlight-css" rel="stylesheet" href="/css/highlight.css?v=78d82252c6"><link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css?v=f3a2215e6c"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_2976433_etozsfezlbk.css"><link rel="stylesheet" href="/css/font.css?v=3afdf1652d"><link rel="stylesheet" href="/css/style.css?v=219f3c663d"><script id="fluid-configs">var Fluid=window.Fluid||{};Fluid.ctx=Object.assign({},Fluid.ctx);var CONFIG={hostname:"blog.seeyue.top",root:"/",version:"1.9.7",typing:{enable:!0,typeSpeed:70,cursorChar:"_",loop:!1,scope:[]},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"left",visible:"hover",icon:"#"},progressbar:{enable:!0,height_px:3,color:"#29d",options:{showSpinner:!1,trickleSpeed:100}},code_language:{enable:!1,default:"TEXT"},copy_btn:!1,image_caption:{enable:!0},image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,placement:"right",headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:0},lazyload:{enable:!0,loading_img:"/img/loading.gif?v=1565753904",onlypost:!1,offset_factor:2},web_analytics:{enable:!0,follow_dnt:!0,baidu:null,google:{measurement_id:null},tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:"JByBYED0AL5gnE9tInw53aDm-MdYXbMMI",app_key:"U9jx6MnEsVVvYuGddgUXn4BU",server_url:"https://jbybyed0.api.lncldglobal.com",path:"window.location.pathname",ignore_local:!1}},search_path:"/local-search.xml?v=3d468fdb23",include_content_in_search:!0};if(CONFIG.web_analytics.follow_dnt){var dntVal=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack;Fluid.ctx.dnt=dntVal&&(dntVal.startsWith("1")||dntVal.startsWith("yes")||dntVal.startsWith("on"))}</script><script src="/js/utils.js?v=f7ce9014de"></script><script src="/js/color-schema.js?v=5e4105d106"></script><script async>Fluid.ctx.dnt||Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=",(function(){function a(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],a("js",new Date),a("config","")}))</script><meta name="generator" content="Hexo 7.0.0"></head><body><header><div class="header-inner" style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong style="font-family:三极古拙楷书简">望月家</strong> </a><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/" target="_self"><i class="iconfont icon-home-fill"></i> <span>首页</span></a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="iconfont icon-book4"></i> <span>文章</span></a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/categories/" target="_self"><i class="iconfont icon-category-fill"></i> <span>分类</span> </a><a class="dropdown-item" href="/tags/" target="_self"><i class="iconfont icon-tags-fill"></i> <span>标签</span> </a><a class="dropdown-item" href="/archives/" target="_self"><i class="iconfont icon-archive-fill"></i> <span>归档</span> </a><a class="dropdown-item" href="/random" target="_self"><i class="iconfont icon-random1"></i> <span>漫游</span></a></div></li><li class="nav-item"><a class="nav-link" href="/links/" target="_self"><i class="iconfont icon-link-fill"></i> <span>友链</span></a></li><li class="nav-item"><a class="nav-link" href="/about/" target="_self"><i class="iconfont icon-user-fill"></i> <span>关于</span></a></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" rel="external nofollow noreferrer" data-toggle="modal" data-target="#modalSearch" aria-label="Search"><i class="iconfont icon-search"></i></a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" rel="external nofollow noreferrer" aria-label="Color Toggle"><i class="iconfont icon-dark" id="color-toggle-icon"></i></a></li></ul></div></div></nav><div id="banner" class="banner" parallax="true" style="background:url('/img/default.webp') no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="banner-text text-center fade-in-up"><div class="h2"><span style="font-family:三极古拙楷书简,HarmonyOS_Sans_SC_Regular,LXGWWenKaiLite-Regular" id="subtitle" data-typed-text="Fluid 主题修改记录"></span></div><div class="mt-3"><span class="post-meta mr-2"><i class="iconfont icon-author" aria-hidden="true"></i> See Yue </span><span class="post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2024-03-03 12:14" pubdate>2024年3月3日 中午</time></span></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 5.7k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 29 分钟 </span><span><i class="iconfont icon-pinglun"></i>&nbsp;&nbsp;<span class="waline-comment-count" data-path="/posts/b78a5b0f/"></span> 条评论</span></div></div></div></div></div></div></header><main><div class="container-fluid nopadding-x"><div class="row nomargin-x"><div class="side-col d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-x-md"><div class="container nopadding-x-md" id="board-ctn"><div id="board"><article class="post-content mx-auto"><h1 id="seo-header">Fluid 主题修改记录</h1><p id="updated-time" class="note note-info" style="display:none">本文最后更新于 2024-03-19T10:50:54+08:00</p><div class="markdown-body"><p>这是 Fluid v1.9.7 修改内容的记录。下面的修改涉及到了图标，需要在 <code>_config.fluid.yml</code> 引入如下 CSS。</p><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">custom_css:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">//at.alicdn.com/t/c/font_2976433_etozsfezlbk.css</span></code></pre></div><h2 id="1-1-代码块增强">1.1 代码块增强</h2><p>v1.9.7 版本已实现代码块显示编程语言和复制代码按钮，但缺少代码块折叠功能。在参考网上的资料和 ChatGPT 后，实现了该功能。</p><p><strong>1、_config.fluid.yml 文件修改</strong></p><p>增加以下代码</p><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">code:</span>
+  <span class="hljs-comment"># 设置为 false</span>
+  <span class="hljs-attr">copy_btn:</span> <span class="hljs-literal">false</span>
+
+  <span class="hljs-comment"># 设置为 false</span>
+  <span class="hljs-attr">language:</span>
+    <span class="hljs-attr">enable:</span> <span class="hljs-literal">false</span>
+    <span class="hljs-attr">default:</span> <span class="hljs-string">"TEXT"</span>
+
+<span class="hljs-comment"># ...</span>
+
+<span class="hljs-comment"># 增加的代码</span>
+<span class="hljs-attr">SeeYue_Mod:</span>
+  <span class="hljs-comment"># 代码块增强</span>
+  <span class="hljs-attr">code_enhance:</span>
+    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-comment"># 代码块折叠</span>
+    <span class="hljs-attr">fold:</span>
+      <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-comment"># 最大显示行数</span>
+      <span class="hljs-attr">lines:</span> <span class="hljs-number">20</span>
+    <span class="hljs-comment"># 是否显示代码块编程语言</span>
+    <span class="hljs-attr">lang:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-comment"># 是否显示代码块复制按钮</span>
+    <span class="hljs-attr">copy:</span> <span class="hljs-literal">true</span></code></pre></div><p><strong>2、scripts.ejs 文件修改</strong></p><p><code>scripts.ejs</code> 位于 themes\fluid\layout_partials\ 路径，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs ejs">&lt;!-- 代码增强 --&gt;
+&lt;%- partial('_partials/plugins/code-enhance.ejs') %&gt;</code></pre></div><p><code>code-enhance.ejs</code> 放在 themes\fluid\layout_partials\plugins\ 路径，其代码如下。</p><div class="code-wrapper"><pre><code class="hljs ejs">&lt;!-- 不要格式化 --&gt;
+&lt;% if ((theme.SeeYue_Mod.code_enhance.enable &amp;&amp; theme.code.highlight.line_number)) { %&gt;
+  &lt;script&gt;
+    // 是否开启代码折叠
+    var enableCodeCollapse = &lt;%- theme.SeeYue_Mod.code_enhance.fold.enable %&gt;;
+    // 代码块最大显示行数
+    var maxDisplayLines = &lt;%- theme.SeeYue_Mod.code_enhance.fold.lines %&gt;;
+    // 是否开启代码复制
+    var enableCodeCopy = &lt;%- theme.SeeYue_Mod.code_enhance.copy %&gt;;
+    // 是否显示编程语言
+    var enableCodeLanguage = &lt;%- theme.SeeYue_Mod.code_enhance.lang %&gt;;
+    // 代码语言标准形式
+      var codeLang = {
+        abap: "ABAP",
+        apl: "APL",
+        asciiarmor: "ASCII Armor",
+        asn1: "ASN.1",
+        asp: "ASP",
+        assembly: "Assembly",
+        bash: "Bash",
+        basic: "BASIC",
+        c: "C",
+        csharp: "C#",
+        cpp: "C++",
+        cassandra: "Cassandra",
+        ceylon: "Ceylon",
+        clike: "C-like",
+        clojure: "Clojure",
+        cmake: "CMake",
+        cobol: "COBOL",
+        coffeescript: "CoffeeScript",
+        commonlisp: "Common Lisp",
+        cql: "CQL",
+        crystal: "Crystal",
+        css: "CSS",
+        cypher: "Cypher",
+        cython: "Cython",
+        d: "D",
+        dart: "Dart",
+        diff: "Diff",
+        django: "Django",
+        dockerfile: "Dockerfile",
+        dtd: "DTD",
+        dylan: "Dylan",
+        ejs: "EJS",
+        elixir: "Elixir",
+        elm: "Elm",
+        embeddedjs: "EmbeddedJS",
+        erb: "ERB",
+        erlang: "Erlang",
+        fsharp: "F#",
+        flow: "Flow",
+        forth: "Forth",
+        fortran: "Fortran",
+        gas: "Gas",
+        gfm: "GFM",
+        gherkin: "Gherkin",
+        glsl: "GLSL",
+        go: "Go",
+        groovy: "Groovy",
+        handlebars: "Handlebars",
+        haskell: "Haskell",
+        haxe: "Haxe",
+        hive: "Hive",
+        htaccess: "htaccess",
+        html: "HTML",
+        http: "HTTP",
+        hxml: "HXML",
+        idl: "IDL",
+        ini: "INI",
+        jade: "Jade",
+        java: "Java",
+        javascript: "JavaScript",
+        jinja2: "Jinja2",
+        js: "JavaScript",
+        json: "JSON",
+        jsp: "JSP",
+        jsx: "JSX",
+        julia: "Julia",
+        kotlin: "Kotlin",
+        latex: "LaTeX",
+        less: "Less",
+        lisp: "Lisp",
+        livescript: "LiveScript",
+        lua: "Lua",
+        makefile: "Makefile",
+        mariadb: "MariaDB",
+        markdown: "Markdown",
+        mathematica: "Mathematica",
+        matlab: "MATLAB",
+        mbox: "Mbox",
+        mermaid: "Mermaid",
+        mssql: "MSSQL",
+        mysql: "MySQL",
+        nginx: "Nginx",
+        nim: "Nim",
+        nsis: "NSIS",
+        objc: "Objective-C",
+        ocaml: "OCaml",
+        octave: "Octave",
+        oz: "Oz",
+        pascal: "Pascal",
+        pegjs: "PEG.js",
+        perl: "Perl",
+        perl6: "Perl6",
+        pgp: "PGP",
+        php: "PHP",
+        phphtml: "PHP+HTML",
+        plsql: "PL/SQL",
+        postgresql: "PostgreSQL",
+        powershell: "PowerShell",
+        properties: "Properties",
+        protobuf: "Protocol Buffers",
+        pseudocode: "Pseudocode",
+        pug: "Pug",
+        python: "Python",
+        q: "Q",
+        r: "R",
+        react: "React",
+        restructuredtext: "reStructuredText",
+        rst: "RST",
+        ruby: "Ruby",
+        rust: "Rust",
+        sas: "SAS",
+        scala: "Scala",
+        scheme: "Scheme",
+        scss: "SCSS",
+        sequence: "Sequence",
+        sh: "Shell",
+        shell: "Shell",
+        smalltalk: "Smalltalk",
+        solidity: "Solidity",
+        sparql: "SPARQL",
+        spreadsheet: "Spreadsheet",
+        sql: "SQL",
+        sqlite: "SQLite",
+        squirrel: "Squirrel",
+        stata: "Stata",
+        stylus: "Stylus",
+        svelte: "Svelte",
+        swift: "Swift",
+        systemverilog: "SystemVerilog",
+        tcl: "Tcl",
+        tex: "TeX",
+        tiddlywiki: "TiddlyWiki",
+        tikiwiki: "Tiki Wiki",
+        toml: "TOML",
+        ts: "TypeScript",
+        tsx: "TSX",
+        turtle: "Turtle",
+        twig: "Twig",
+        typescript: "TypeScript",
+        v: "V",
+        vb: "VB",
+        vbscript: "VBScript",
+        velocity: "Velocity",
+        verilog: "Verilog",
+        vhdl: "VHDL",
+        visualbasic: "Visual Basic",
+        vue: "Vue",
+        webidl: "Web IDL",
+        wiki: "Wiki",
+        xaml: "XAML",
+        xml: "XML",
+        xmldtd: "XML DTD",
+        xquery: "XQuery",
+        yacas: "Yacas",
+        yaml: "YAML",
+        yara: "YARA",
+      };
+
+      // 代码语言格式化
+      function getLanguage(lang) {
+        var lang_lower = lang.toLowerCase();
+        return lang_lower in codeLang ? codeLang[lang_lower] : lang;
+      }
+      // 获取唯一 ID
+      function getUuiD() {
+        return Math.random().toString(36).substring(2, 8) + Date.now().toString(36);
+      }
+      // 文本复制
+      function copyText(text) {
+        navigator.clipboard.writeText(text).then(function () {
+          console.log('代码复制成功');
+        }).catch(function (err) {
+          console.error('代码复制失败', err);
+        });
+      }
+      // 复制按钮
+      function addCopyButton(wrapper) {
+        if (!enableCodeCopy) {
+          return;
+        }
+      // 创建复制按钮
+      var copyBtn = document.createElement('i');
+      copyBtn.className = 'iconfont icon-clipboard copy-btn';
+      copyBtn.addEventListener('click', function () {
+        // 获取代码块内容
+        var codeContent = wrapper.querySelector('.code pre');
+        copyText(codeContent.innerText);
+        // 先隐藏原本的复制按钮
+        copyBtn.style.display = 'none';
+        // 插入一个检查图标作为成功提示
+        var successIcon = document.createElement('i');
+        successIcon.className = 'iconfont icon-check copy-btn';
+        wrapper.prepend(successIcon);
+        setTimeout(function () {
+          successIcon.remove();
+          copyBtn.style.display = 'block';
+        }, 1000);
+      });
+      // 创建 span 元素
+      var spanElement = document.createElement('span');
+      spanElement.innerText = '请在展开状态复制';
+      spanElement.classList.add('copy-tip');
+      spanElement.style.opacity = '0';
+      copyBtn.addEventListener('mouseenter', function () {
+        if (wrapper.querySelector('.code').offsetHeight === 0) {
+          $(spanElement).animate({ opacity: 1 }, 300);
+        }
+      });
+      copyBtn.addEventListener('mouseleave', function () {
+        if (wrapper.querySelector('.code').offsetHeight === 0) {
+          $(spanElement).animate({ opacity: 0 }, 300);
+        }
+      });
+      wrapper.prepend(spanElement);
+      wrapper.prepend(copyBtn);
+    }
+
+    // 代码折叠
+    function addCodeCollapse(wrapper) {
+      var lang = wrapper.classList[1];
+      var id = `collapse-${getUuiD()}`;
+      // 是否显示折叠按钮
+      var btn = enableCodeCollapse ? `&lt;i class="iconfont icon-regular-down" type="button" data-toggle="collapse" data-target="#${id}"&gt;&lt;/i&gt;` : '';
+      // 是否显示编程语言标签
+      var span = enableCodeLanguage ? `&lt;span class="code-lang"&gt;${getLanguage(lang)}&lt;/span&gt;` : '';
+      // 判断是否是大型代码块且开启了折叠
+      var isLargeCode = wrapper.innerText.split('\n').length &gt; (maxDisplayLines + 1);
+      // 设置默认的折叠样式
+      var defaultCollapseClass = isLargeCode &amp;&amp; enableCodeCollapse ? 'collapse' : 'collapse show';
+      // 创建包含折叠内容的 div
+      var div = `&lt;div class="${defaultCollapseClass}" id="${id}"&gt;${wrapper.innerHTML}&lt;/div&gt;`;
+      wrapper.innerHTML = btn + span + div;
+      // 如果是大型代码块且开启了折叠
+      if (isLargeCode &amp;&amp; enableCodeCollapse) {
+        // 获取折叠按钮
+        var collapseButton = wrapper.querySelector(".icon-regular-down");
+        // 添加旋转效果
+        collapseButton.classList.add('rotate');
+        // 点击折叠按钮时，移除旋转效果
+        collapseButton.addEventListener('click', function () {
+          var icon = $(this);
+          icon.removeClass('rotate');
+        });
+      }
+    }
+    function codeEnhanced() {
+      // 获取所有代码块的容器
+      var wrappers = $("figure.highlight");
+      for (var i = 0; i &lt; wrappers.length; i++) {
+        var wrapper = wrappers[i];
+        // 调用折叠函数
+        addCodeCollapse(wrapper);
+        // 添加复制按钮
+        addCopyButton(wrapper);
+      }
+    }
+    // 页面加载完成后执行主逻辑
+    $(document).ready(codeEnhanced);
+  &lt;/script&gt;
+&lt;% } %&gt;
+&lt;% if ((theme.SeeYue_Mod.code_enhance.enable &amp;&amp; !theme.code.highlight.line_number)) { %&gt;
+  &lt;script&gt;
+    // 是否开启代码折叠
+    var enableCodeCollapse = &lt;%- theme.SeeYue_Mod.code_enhance.fold.enable %&gt;;
+    // 代码块最大显示行数
+    var maxDisplayLines = &lt;%- theme.SeeYue_Mod.code_enhance.fold.lines %&gt;;
+    // 是否开启代码复制
+    var enableCodeCopy = &lt;%- theme.SeeYue_Mod.code_enhance.copy %&gt;;
+    // 是否显示编程语言
+    var enableCodeLanguage = &lt;%- theme.SeeYue_Mod.code_enhance.lang %&gt;;
+    // 代码语言标准形式
+    var codeLang = {
+      abap: "ABAP",
+      apl: "APL",
+      asciiarmor: "ASCII Armor",
+      asn1: "ASN.1",
+      asp: "ASP",
+      assembly: "Assembly",
+      bash: "Bash",
+      basic: "BASIC",
+      c: "C",
+      csharp: "C#",
+      cpp: "C++",
+      cassandra: "Cassandra",
+      ceylon: "Ceylon",
+      clike: "C-like",
+      clojure: "Clojure",
+      cmake: "CMake",
+      cobol: "COBOL",
+      coffeescript: "CoffeeScript",
+      commonlisp: "Common Lisp",
+      cql: "CQL",
+      crystal: "Crystal",
+      css: "CSS",
+      cypher: "Cypher",
+      cython: "Cython",
+      d: "D",
+      dart: "Dart",
+      diff: "Diff",
+      django: "Django",
+      dockerfile: "Dockerfile",
+      dtd: "DTD",
+      dylan: "Dylan",
+      ejs: "EJS",
+      elixir: "Elixir",
+      elm: "Elm",
+      embeddedjs: "EmbeddedJS",
+      erb: "ERB",
+      erlang: "Erlang",
+      fsharp: "F#",
+      flow: "Flow",
+      forth: "Forth",
+      fortran: "Fortran",
+      gas: "Gas",
+      gfm: "GFM",
+      gherkin: "Gherkin",
+      glsl: "GLSL",
+      go: "Go",
+      groovy: "Groovy",
+      handlebars: "Handlebars",
+      haskell: "Haskell",
+      haxe: "Haxe",
+      hive: "Hive",
+      htaccess: "htaccess",
+      html: "HTML",
+      http: "HTTP",
+      hxml: "HXML",
+      idl: "IDL",
+      ini: "INI",
+      jade: "Jade",
+      java: "Java",
+      javascript: "JavaScript",
+      jinja2: "Jinja2",
+      js: "JavaScript",
+      json: "JSON",
+      jsp: "JSP",
+      jsx: "JSX",
+      julia: "Julia",
+      kotlin: "Kotlin",
+      latex: "LaTeX",
+      less: "Less",
+      lisp: "Lisp",
+      livescript: "LiveScript",
+      lua: "Lua",
+      makefile: "Makefile",
+      mariadb: "MariaDB",
+      markdown: "Markdown",
+      mathematica: "Mathematica",
+      matlab: "MATLAB",
+      mbox: "Mbox",
+      mermaid: "Mermaid",
+      mssql: "MSSQL",
+      mysql: "MySQL",
+      nginx: "Nginx",
+      nim: "Nim",
+      nsis: "NSIS",
+      objc: "Objective-C",
+      ocaml: "OCaml",
+      octave: "Octave",
+      oz: "Oz",
+      pascal: "Pascal",
+      pegjs: "PEG.js",
+      perl: "Perl",
+      perl6: "Perl6",
+      pgp: "PGP",
+      php: "PHP",
+      phphtml: "PHP+HTML",
+      plsql: "PL/SQL",
+      postgresql: "PostgreSQL",
+      powershell: "PowerShell",
+      properties: "Properties",
+      protobuf: "Protocol Buffers",
+      pseudocode: "Pseudocode",
+      pug: "Pug",
+      python: "Python",
+      q: "Q",
+      r: "R",
+      react: "React",
+      restructuredtext: "reStructuredText",
+      rst: "RST",
+      ruby: "Ruby",
+      rust: "Rust",
+      sas: "SAS",
+      scala: "Scala",
+      scheme: "Scheme",
+      scss: "SCSS",
+      sequence: "Sequence",
+      sh: "Shell",
+      shell: "Shell",
+      smalltalk: "Smalltalk",
+      solidity: "Solidity",
+      sparql: "SPARQL",
+      spreadsheet: "Spreadsheet",
+      sql: "SQL",
+      sqlite: "SQLite",
+      squirrel: "Squirrel",
+      stata: "Stata",
+      stylus: "Stylus",
+      svelte: "Svelte",
+      swift: "Swift",
+      systemverilog: "SystemVerilog",
+      tcl: "Tcl",
+      tex: "TeX",
+      tiddlywiki: "TiddlyWiki",
+      tikiwiki: "Tiki Wiki",
+      toml: "TOML",
+      ts: "TypeScript",
+      tsx: "TSX",
+      turtle: "Turtle",
+      twig: "Twig",
+      typescript: "TypeScript",
+      v: "V",
+      vb: "VB",
+      vbscript: "VBScript",
+      velocity: "Velocity",
+      verilog: "Verilog",
+      vhdl: "VHDL",
+      visualbasic: "Visual Basic",
+      vue: "Vue",
+      webidl: "Web IDL",
+      wiki: "Wiki",
+      xaml: "XAML",
+      xml: "XML",
+      xmldtd: "XML DTD",
+      xquery: "XQuery",
+      yacas: "Yacas",
+      yaml: "YAML",
+      yara: "YARA",
+    };
+
+    // 代码语言格式化
+      function getLanguage(lang) {
+        var lang_lower = lang.toLowerCase();
+        return lang_lower in codeLang ? codeLang[lang_lower] : lang;
+      }
+      // 获取唯一 ID
+      function getUuiD() {
+        return Math.random().toString(36).substring(2, 8) + Date.now().toString(36);
+      }
+      // 文本复制
+      function copyText(text) {
+        navigator.clipboard.writeText(text).then(function () {
+          console.log('代码复制成功');
+        }).catch(function (err) {
+          console.error('代码复制失败', err);
+        });
+      }
+      // 添加复制按钮
+      function addCopyButton(wrapper) {
+        if (!enableCodeCopy) {
+          return;
+        }
+      // 创建复制按钮
+      var copyBtn = document.createElement('i');
+      copyBtn.className = 'iconfont icon-clipboard copy-code copy-btn';
+      copyBtn.addEventListener('click', function () {
+        var codeContent = wrapper.lastChild;
+        console.log(codeContent);
+        copyText(codeContent.innerText);
+        copyBtn.style.display = 'none';
+        var successIcon = document.createElement('i');
+        successIcon.className = 'iconfont icon-check copy-btn';
+        wrapper.prepend(successIcon);
+        setTimeout(function () {
+          successIcon.remove();
+          copyBtn.style.display = 'block';
+        }, 1000);
+      });
+      wrapper.prepend(copyBtn);
+    }
+    // 代码折叠
+    function addCodeCollapse(wrapper) {
+      var lang = wrapper.firstChild.firstChild.classList[1];
+      var id = `collapse-${getUuiD()}`;
+      var btn = enableCodeCollapse ? `&lt;i class="iconfont icon-regular-down" type="button" data-toggle="collapse" data-target="#${id}"&gt;&lt;/i&gt;` : '';
+      var span = enableCodeLanguage ? `&lt;span class="code-lang"&gt;${getLanguage(lang)}&lt;/span&gt;` : '';
+      var isLargeCode = wrapper.innerText.split('\n').length &gt; (maxDisplayLines + 1);
+      var defaultCollapseClass = isLargeCode &amp;&amp; enableCodeCollapse ? 'collapse' : 'collapse show';
+      var div = `&lt;div class="${defaultCollapseClass}" id="${id}"&gt;${wrapper.innerHTML}&lt;/div&gt;`;
+      wrapper.innerHTML = btn + span + div;
+      // 如果是大型代码块且开启了折叠
+      if (isLargeCode &amp;&amp; enableCodeCollapse) {
+        // 获取折叠按钮
+        var collapseButton = wrapper.querySelector(".icon-regular-down");
+        // 添加旋转效果
+        collapseButton.classList.add('rotate');
+        // 点击折叠按钮时，移除旋转效果
+        collapseButton.addEventListener('click', function () {
+          var icon = $(this);
+          icon.removeClass('rotate');
+        });
+      }
+    }
+    function codeEnhanced() {
+      // 获取所有代码块的容器
+      var wrappers = $(".code-wrapper");
+      for (var i = 0; i &lt; wrappers.length; i++) {
+        var wrapper = wrappers[i];
+        // 调用折叠函数
+        addCodeCollapse(wrapper);
+        // 添加复制按钮
+        addCopyButton(wrapper);
+      }
+    }
+    // 页面加载完成后执行主逻辑
+    $(document).ready(codeEnhanced);
+  &lt;/script&gt;
+&lt;% } %&gt;</code></pre></div><p><strong>3、样式修改</strong></p><p>CSS 代码如下，复制主题正在使用的 CSS 文件内。</p><div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* —————————————————————— 代码块 —————————————————————— */</span>
+<span class="hljs-comment">/* 公共代码和 figure.highlight 的样式 */</span>
+<span class="hljs-selector-class">.markdown-body</span> <span class="hljs-selector-class">.highlight</span> pre,
+<span class="hljs-selector-class">.markdown-body</span> pre,
+<span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> pre {
+  <span class="hljs-attribute">padding</span>                : <span class="hljs-number">5px</span> <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border-radius</span>          : <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">border-top-right-radius</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border-top-left-radius</span> : <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">/* 公共代码和 figure.highlight 的样式 */</span>
+<span class="hljs-selector-class">.markdown-body</span> <span class="hljs-selector-class">.code-wrapper</span>,
+<span class="hljs-selector-class">.markdown-body</span> <span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> {
+  <span class="hljs-attribute">background</span>   : <span class="hljs-number">#e6ebf1</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-comment">/* 暗黑模式的样式 */</span>
+<span class="hljs-selector-attr">[data-user-color-scheme=<span class="hljs-string">'dark'</span>]</span> <span class="hljs-selector-class">.markdown-body</span> <span class="hljs-selector-class">.code-wrapper</span>,
+<span class="hljs-selector-attr">[data-user-color-scheme=<span class="hljs-string">'dark'</span>]</span> <span class="hljs-selector-class">.markdown-body</span> <span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#1d1f23</span>;
+  <span class="hljs-attribute">position</span>  : relative;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0px</span> <span class="hljs-number">0px</span> <span class="hljs-number">10px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.15</span>);
+}
+
+<span class="hljs-comment">/* 折叠/展开图标 */</span>
+<span class="hljs-selector-class">.code-wrapper</span> <span class="hljs-selector-class">.iconfont</span><span class="hljs-selector-class">.icon-regular-down</span>,
+<span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> <span class="hljs-selector-class">.iconfont</span><span class="hljs-selector-class">.icon-regular-down</span> {
+  <span class="hljs-attribute">transform</span> : none;
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">0.2s</span> ease-in-out;
+}
+
+<span class="hljs-selector-class">.code-wrapper</span> <span class="hljs-selector-class">.iconfont</span><span class="hljs-selector-class">.icon-regular-down</span><span class="hljs-selector-class">.rotate</span>,
+<span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> <span class="hljs-selector-class">.iconfont</span><span class="hljs-selector-class">.icon-regular-down</span><span class="hljs-selector-class">.rotate</span>,
+<span class="hljs-selector-class">.code-wrapper</span> <span class="hljs-selector-class">.iconfont</span><span class="hljs-selector-class">.icon-regular-down</span><span class="hljs-selector-class">.collapsed</span>,
+<span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> <span class="hljs-selector-class">.iconfont</span><span class="hljs-selector-class">.icon-regular-down</span><span class="hljs-selector-class">.collapsed</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">90deg</span>) <span class="hljs-meta">!important</span>;
+}
+
+<span class="hljs-comment">/* 其他共享样式 */</span>
+<span class="hljs-selector-class">.code-wrapper</span>&gt;<span class="hljs-selector-tag">i</span>,
+<span class="hljs-selector-class">.code-wrapper</span>&gt;<span class="hljs-selector-tag">span</span>,
+<span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span>&gt;<span class="hljs-selector-tag">i</span>,
+<span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span>&gt;<span class="hljs-selector-tag">span</span> {
+  <span class="hljs-attribute">color</span>      : <span class="hljs-built_in">var</span>(--text-color);
+  <span class="hljs-attribute">opacity</span>    : .<span class="hljs-number">6</span>;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2rem</span>;
+}
+
+<span class="hljs-comment">/* pre 标签样式 */</span>
+<span class="hljs-selector-class">.markdown-body</span> pre {
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">/* 复制按钮样式 */</span>
+<span class="hljs-selector-class">.copy-btn</span> {
+  <span class="hljs-attribute">cursor</span>   : pointer;
+  <span class="hljs-attribute">float</span>    : right;
+  <span class="hljs-attribute">position</span> : relative;
+  <span class="hljs-attribute">top</span>      : <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">right</span>    : <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+
+<span class="hljs-comment">/* 代码语言标签样式 */</span>
+<span class="hljs-selector-class">.code-wrapper</span> <span class="hljs-selector-class">.code-lang</span>,
+<span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> <span class="hljs-selector-class">.code-lang</span> {
+  <span class="hljs-attribute">font-weight</span>: bold;
+}
+
+<span class="hljs-comment">/* 有行号+代码块折叠，复制提示样式 */</span>
+<span class="hljs-selector-class">.copy-tip</span> {
+  <span class="hljs-attribute">float</span>      : right;
+  <span class="hljs-attribute">font-size</span>  : <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">position</span>   : relative;
+  <span class="hljs-attribute">top</span>        : <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">right</span>      : <span class="hljs-number">8px</span>;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">font-weight</span>: normal <span class="hljs-meta">!important</span>;
+}</code></pre></div><p><strong>注意</strong>：当代码块处于折叠 + 有行号时，复制的代码一行显示。</p><h2 id="1-2-跳转评论区按钮">1.2 跳转评论区按钮</h2><p>Fluid 主题有回到顶部按钮，但缺少跳转评论区按钮，现在补上。</p><p><strong>1、events.js 文件修改</strong></p><p><code>events.js</code> 位于themes\fluid\source\js\ 路径，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span> = {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">registerScrollTopArrowEvent</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">var</span> topArrow = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">'#scroll-top-button'</span>);
+    <span class="hljs-keyword">if</span> (topArrow.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> board = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">'#board'</span>);
+    <span class="hljs-keyword">if</span> (board.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> posDisplay = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">var</span> scrollDisplay = <span class="hljs-literal">false</span>;
+    <span class="hljs-comment">// Position</span>
+    <span class="hljs-keyword">var</span> setTopArrowPos = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> boardRight = board[<span class="hljs-number">0</span>].<span class="hljs-title function_">getClientRects</span>()[<span class="hljs-number">0</span>].<span class="hljs-property">right</span>;
+      <span class="hljs-keyword">var</span> bodyWidth = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">offsetWidth</span>;
+      <span class="hljs-keyword">var</span> right = bodyWidth - boardRight;
+      posDisplay = right &gt;= <span class="hljs-number">50</span>;
+      topArrow.<span class="hljs-title function_">css</span>({
+        <span class="hljs-string">'bottom'</span>: posDisplay &amp;&amp; scrollDisplay ? <span class="hljs-string">'20px'</span> : <span class="hljs-string">'-60px'</span>,
+        <span class="hljs-string">'right'</span>: right - <span class="hljs-number">64</span> + <span class="hljs-string">'px'</span>
+      });
+    };
+    <span class="hljs-title function_">setTopArrowPos</span>();
+    <span class="hljs-title function_">jQuery</span>(<span class="hljs-variable language_">window</span>).<span class="hljs-title function_">resize</span>(setTopArrowPos);
+    <span class="hljs-comment">// Display</span>
+    <span class="hljs-keyword">var</span> headerHeight = board.<span class="hljs-title function_">offset</span>().<span class="hljs-property">top</span>;
+    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">utils</span>.<span class="hljs-title function_">listenScroll</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> scrollHeight = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">scrollTop</span> + <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollTop</span>;
+      scrollDisplay = scrollHeight &gt;= headerHeight;
+      topArrow.<span class="hljs-title function_">css</span>({
+        <span class="hljs-string">'bottom'</span>: posDisplay &amp;&amp; scrollDisplay ? <span class="hljs-string">'20px'</span> : <span class="hljs-string">'-60px'</span>
+      });
+    });
+    <span class="hljs-comment">// Click</span>
+    topArrow.<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">'body,html'</span>).<span class="hljs-title function_">animate</span>({
+        <span class="hljs-attr">scrollTop</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">easing</span>: <span class="hljs-string">'swing'</span>
+      });
+    });
+  },
+
+  <span class="hljs-comment">// 文章页面跳转评论区按钮</span>
+  <span class="hljs-attr">registerScrollToCommentsEvent</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// 判断是否为文章页面</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span>.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">"posts"</span>) === -<span class="hljs-number">1</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> offsetToComments = <span class="hljs-number">70</span>; <span class="hljs-comment">// 评论区顶部到距离页面顶部高度</span>
+    <span class="hljs-keyword">var</span> bottomComment = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">'#scroll-comment-button'</span>);
+    <span class="hljs-keyword">if</span> (bottomComment.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> board = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">'#board'</span>);
+    <span class="hljs-keyword">if</span> (board.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> posDisplay = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">var</span> scrollDisplay = <span class="hljs-literal">false</span>;
+    <span class="hljs-comment">// Position</span>
+    <span class="hljs-keyword">var</span> setCommentButtonPos = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> boardRight = board[<span class="hljs-number">0</span>].<span class="hljs-title function_">getClientRects</span>()[<span class="hljs-number">0</span>].<span class="hljs-property">right</span>;
+      <span class="hljs-keyword">var</span> bodyWidth = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">offsetWidth</span>;
+      <span class="hljs-keyword">var</span> right = bodyWidth - boardRight;
+      posDisplay = right &gt;= <span class="hljs-number">50</span>;
+      bottomComment.<span class="hljs-title function_">css</span>({
+        <span class="hljs-string">'bottom'</span>: posDisplay &amp;&amp; scrollDisplay ? <span class="hljs-string">'80px'</span> : <span class="hljs-string">'-60px'</span>,
+        <span class="hljs-string">'right'</span>: right - <span class="hljs-number">64</span> + <span class="hljs-string">'px'</span>
+      });
+    };
+    <span class="hljs-title function_">setCommentButtonPos</span>();
+    <span class="hljs-title function_">jQuery</span>(<span class="hljs-variable language_">window</span>).<span class="hljs-title function_">resize</span>(setCommentButtonPos);
+    <span class="hljs-comment">// Display</span>
+    <span class="hljs-keyword">var</span> headerHeight = board.<span class="hljs-title function_">offset</span>().<span class="hljs-property">top</span>;
+    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">utils</span>.<span class="hljs-title function_">listenScroll</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> scrollHeight = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">scrollTop</span> + <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollTop</span>;
+      scrollDisplay = scrollHeight &gt;= headerHeight;
+      bottomComment.<span class="hljs-title function_">css</span>({
+        <span class="hljs-string">'bottom'</span>: posDisplay &amp;&amp; scrollDisplay ? <span class="hljs-string">'80px'</span> : <span class="hljs-string">'-60px'</span>
+      });
+    });
+    <span class="hljs-keyword">var</span> setCommentButtonPos = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> boardRight = board[<span class="hljs-number">0</span>].<span class="hljs-title function_">getClientRects</span>()[<span class="hljs-number">0</span>].<span class="hljs-property">right</span>;
+      <span class="hljs-keyword">var</span> bodyWidth = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">offsetWidth</span>;
+      <span class="hljs-keyword">var</span> right = bodyWidth - boardRight;
+      posDisplay = right &gt;= <span class="hljs-number">50</span>;
+      bottomComment.<span class="hljs-title function_">css</span>({
+        <span class="hljs-string">'bottom'</span>: posDisplay &amp;&amp; scrollDisplay ? <span class="hljs-string">'20px'</span> : <span class="hljs-string">'-60px'</span>,
+        <span class="hljs-string">'right'</span>: right - <span class="hljs-number">64</span> + <span class="hljs-string">'px'</span>
+      });
+    };
+    <span class="hljs-comment">// Click</span>
+    bottomComment.<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> commentsSection = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">'#comments'</span>);
+      <span class="hljs-keyword">if</span> (commentsSection.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">var</span> scrollTo = commentsSection.<span class="hljs-title function_">offset</span>().<span class="hljs-property">top</span> - offsetToComments;
+        <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">'body,html'</span>).<span class="hljs-title function_">animate</span>({
+          <span class="hljs-attr">scrollTop</span>: scrollTo,
+          <span class="hljs-attr">easing</span>: <span class="hljs-string">'swing'</span>
+        });
+      }
+    });
+    <span class="hljs-comment">// Button Aimation</span>
+    <span class="hljs-keyword">let</span> commentsSection = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#comments"</span>); <span class="hljs-comment">// 获取评论区的div元素</span>
+    <span class="hljs-keyword">let</span> scrollButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#scroll-comment-button"</span>); <span class="hljs-comment">// 获取跳转按钮元素</span>
+    <span class="hljs-comment">// 添加页面滚动事件监听</span>
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"scroll"</span>, handleScroll);
+    <span class="hljs-comment">// 页面滚动事件处理函数</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleScroll</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-comment">// 获取评论区相对于页面的位置</span>
+      <span class="hljs-keyword">const</span> sectionRect = commentsSection.<span class="hljs-title function_">getBoundingClientRect</span>();
+      <span class="hljs-comment">// 评论区顶部相对于当前页面顶部的垂直距离</span>
+      <span class="hljs-keyword">const</span> distanceFromTop = sectionRect.<span class="hljs-property">top</span>;
+      <span class="hljs-comment">// 如果评论区顶部在页面高度内</span>
+      <span class="hljs-keyword">if</span> (distanceFromTop &gt; <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span> &amp;&amp; distanceFromTop &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-comment">// 显示跳转按钮，应用淡入效果</span>
+        scrollButton.<span class="hljs-property">style</span>.<span class="hljs-property">visibility</span> = <span class="hljs-string">"visible"</span>;
+        scrollButton.<span class="hljs-property">style</span>.<span class="hljs-property">opacity</span> = <span class="hljs-string">"1"</span>;
+        scrollButton.<span class="hljs-property">style</span>.<span class="hljs-property">transition</span> = <span class="hljs-string">"background-color .2s, bottom .3s, opacity .5s, color .3s"</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 隐藏跳转按钮，应用淡出效果</span>
+        scrollButton.<span class="hljs-property">style</span>.<span class="hljs-property">visibility</span> = <span class="hljs-string">"hidden"</span>;
+        scrollButton.<span class="hljs-property">style</span>.<span class="hljs-property">opacity</span> = <span class="hljs-string">"0"</span>;
+        scrollButton.<span class="hljs-property">style</span>.<span class="hljs-property">transition</span> = <span class="hljs-string">"background-color .2s, bottom .3s, visibility 0s .5s, opacity .5s"</span>;
+      }
+    }
+  },
+  <span class="hljs-comment">// ...</span>
+};</code></pre></div><p><strong>2、boot.js 文件修改</strong></p><p><code>boot.js</code> 位于 themes\fluid\source\js\ 路径，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-title class_">Fluid</span>.<span class="hljs-property">boot</span>.<span class="hljs-property">registerEvents</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// 文章页面调整评论区按钮</span>
+  <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerScrollToCommentsEvent</span>();
+  <span class="hljs-comment">// ...</span>
+};</code></pre></div><p><strong>3、样式修改</strong></p><p>CSS 代码如下，复制主题正在使用的 CSS 文件内。</p><div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 跳转评论区按钮 */</span>
+<span class="hljs-selector-id">#scroll-comment-button</span> {
+  <span class="hljs-attribute">position</span>                  : fixed;
+  <span class="hljs-attribute">bottom</span>                    : -<span class="hljs-number">60px</span>;
+  <span class="hljs-attribute">right</span>                     : <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">z-index</span>                   : <span class="hljs-number">99</span>;
+  <span class="hljs-attribute">background</span>                : <span class="hljs-built_in">var</span>(--board-bg-color);
+  <span class="hljs-attribute">transition-timing-function</span>: ease-in-out;
+  <span class="hljs-attribute">border-radius</span>             : <span class="hljs-number">4px</span>;
+  <span class="hljs-attribute">min-width</span>                 : <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">min-height</span>                : <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">outline</span>                   : none;
+  <span class="hljs-attribute">display</span>                   : flex;
+  <span class="hljs-attribute">align-items</span>               : center;
+  <span class="hljs-attribute">box-shadow</span>                : <span class="hljs-number">0</span> <span class="hljs-number">2px</span> <span class="hljs-number">5px</span> <span class="hljs-number">0</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.16</span>), <span class="hljs-number">0</span> <span class="hljs-number">2px</span> <span class="hljs-number">10px</span> <span class="hljs-number">0</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.12</span>);
+  <span class="hljs-attribute">justify-content</span>           : center;
+  <span class="hljs-attribute">font-size</span>                 : <span class="hljs-number">23px</span>;
+  <span class="hljs-attribute">color</span>                     : <span class="hljs-built_in">var</span>(--sec-text-color);
+}
+
+<span class="hljs-selector-id">#scroll-comment-button</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--link-hover-color);
+}</code></pre></div><p><strong>4、layout.ejs 文件修改</strong></p><p><code>layout.ejs</code> 位于 themes\fluid\layout\ 路径，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs ejs">&lt;!-- 不要格式化 --&gt;
+&lt;!-- 跳转评论区按钮 --&gt;
+&lt;% if (theme.SeeYue_Mod.scroll_comments_btn.enable &amp;&amp; !is_home()) { %&gt;
+  &lt;a id="scroll-comment-button" aria-label="Comment" href="#conments" role="button"&gt;
+    &lt;i class="iconfont icon-pinglun" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;% } %&gt;
+
+&lt;% if (theme.scroll_top_arrow.enable) { %&gt;
+  &lt;a id="scroll-top-button" aria-label="TOP" href="#" role="button"&gt;
+    &lt;i class="iconfont icon-arrowup" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;% } %&gt;</code></pre></div><p><strong>5、_config.fluid.yml 文件修改</strong></p><p>增加以下代码。</p><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">SeeYue_Mod:</span>
+  <span class="hljs-comment"># 跳转评论区按钮</span>
+  <span class="hljs-attr">scroll_comments_btn:</span>
+    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span></code></pre></div><h2 id="1-3-首页公告栏">1.3 首页公告栏</h2><p>看到别的主题都有类似公告栏的模块，修修改改弄出了一个简单的版本。</p><p><strong>1、_config.fluid.yml 文件修改</strong></p><p>增加以下代码</p><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">SeeYue_Mod:</span>
+  <span class="hljs-comment"># 公告栏</span>
+  <span class="hljs-attr">broadcast:</span>
+    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># true 开启，false 关闭。</span>
+    <span class="hljs-attr">startDelay:</span> <span class="hljs-number">1500</span> <span class="hljs-comment"># 开始延迟，单位毫秒</span>
+    <span class="hljs-attr">loop:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># 文本是否循环</span>
+    <span class="hljs-attr">cursorChar:</span> <span class="hljs-string">"_"</span>
+    <span class="hljs-attr">icon:</span> <span class="hljs-string">"iconfont icon-laba"</span> <span class="hljs-comment"># icnfont 图标库</span>
+    <span class="hljs-attr">text:</span> <span class="hljs-string">"看的文章越多，越深感自己的不足，后面的时间，我将把精力放在学习新知识上。博客将停更一段时间。等我回来！"</span></code></pre></div><p><strong>2、增加 broadcast.ejs 文件</strong></p><p><code>broadcast.ejs</code> 放在 themes\fluid\layout_partials\plugins\ 路径，代码如下。</p><div class="code-wrapper"><pre><code class="hljs ejs">&lt;!-- 不要格式化 --&gt;
+&lt;% if (theme.SeeYue_Mod.broadcast.enable &amp;&amp; !page.layout){ %&gt;
+  &lt;div class="notice"&gt;
+    &lt;i class="iconfont icon-laba"&gt;&lt;/i&gt;
+      &lt;span class="notice-content"&gt;
+          &lt;span class="element"&gt;&lt;/span&gt;
+      &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;script src="https://lib.baomitu.com/typed.js/2.1.0/typed.umd.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var typed = new Typed(".element", {
+      strings: ["&lt;%= theme.SeeYue_Mod.broadcast.text %&gt;"], //输入内容, 支持html标签
+      startDelay: ["&lt;%= theme.SeeYue_Mod.broadcast.startDelay %&gt;"], //开始延迟
+      typeSpeed: 50, //打字速度，数字越大，速度越慢。
+      backSpeed: 75, //回退速度
+      loop: &lt;%= theme.SeeYue_Mod.broadcast.loop %&gt;, //是否循环
+      showCursor: true, //显示游标
+      cursorChar: "&lt;%= theme.SeeYue_Mod.broadcast.cursorChar %&gt;", //游标样式
+    });
+  &lt;/script&gt;
+&lt;% } %&gt;</code></pre></div><p><strong>3、样式修改</strong></p><p>CSS 代码如下，复制主题正在使用的 CSS 文件内。</p><div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* —————————————————————— 公告栏 ——————————————————————  */</span>
+<span class="hljs-keyword">@keyframes</span> scaleDraw {
+  <span class="hljs-number">0%</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>)
+  }
+
+  <span class="hljs-number">25%</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>)
+  }
+
+  <span class="hljs-number">50%</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>)
+  }
+
+  <span class="hljs-number">75%</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>)
+  }
+
+  <span class="hljs-number">100%</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>)
+  }
+}
+
+<span class="hljs-selector-class">.icon-laba</span> {
+  <span class="hljs-attribute">position</span>         : relative;
+  <span class="hljs-attribute">font-size</span>        : <span class="hljs-number">2rem</span> <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">display</span>          : inline-block;
+  <span class="hljs-attribute">color</span>            : <span class="hljs-number">#d81e06</span>;
+  <span class="hljs-attribute">vertical-align</span>   : sub;
+  -webkit-<span class="hljs-attribute">animation</span>: scaleDraw <span class="hljs-number">1s</span> ease-in-out infinite <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">animation</span>        : scaleDraw <span class="hljs-number">1s</span> ease-in-out infinite <span class="hljs-meta">!important</span>
+}
+
+<span class="hljs-selector-class">.typed-cursor</span> {
+  <span class="hljs-attribute">opacity</span>          : <span class="hljs-number">1</span>;
+  -webkit-<span class="hljs-attribute">animation</span>: blink .<span class="hljs-number">7s</span> infinite;
+  -moz-<span class="hljs-attribute">animation</span>   : blink .<span class="hljs-number">7s</span> infinite;
+  <span class="hljs-attribute">animation</span>        : blink .<span class="hljs-number">7s</span> infinite;
+  <span class="hljs-attribute">font-size</span>        : <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>      : bolder;
+  <span class="hljs-attribute">padding-left</span>     : <span class="hljs-number">5px</span>
+}
+
+<span class="hljs-keyword">@keyframes</span> blink {
+  <span class="hljs-number">0%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>
+  }
+
+  <span class="hljs-number">25%</span> {
+    <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>
+  }
+
+  <span class="hljs-number">50%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>
+  }
+
+  <span class="hljs-number">75%</span> {
+    <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>
+  }
+
+  <span class="hljs-number">100%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>
+  }
+}
+
+<span class="hljs-keyword">@-webkit-keyframes</span> blink {
+  <span class="hljs-number">0%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>
+  }
+
+  <span class="hljs-number">25%</span> {
+    <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>
+  }
+
+  <span class="hljs-number">50%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>
+  }
+
+  <span class="hljs-number">75%</span> {
+    <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>
+  }
+
+  <span class="hljs-number">100%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>
+  }
+}
+
+<span class="hljs-keyword">@-moz-keyframes</span> blink {
+  <span class="hljs-number">0%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>
+  }
+
+  <span class="hljs-number">25%</span> {
+    <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>
+  }
+
+  <span class="hljs-number">50%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>
+  }
+
+  <span class="hljs-number">75%</span> {
+    <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>
+  }
+
+  <span class="hljs-number">100%</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>
+  }
+}
+
+<span class="hljs-selector-class">.notice_board</span> {
+  <span class="hljs-attribute">margin</span> : <span class="hljs-number">20px</span> <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>
+}
+
+<span class="hljs-selector-class">.notice</span> {
+  <span class="hljs-attribute">border-radius</span>: .<span class="hljs-number">5rem</span>;
+  <span class="hljs-attribute">padding</span>      : <span class="hljs-number">8px</span> <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">10px</span>
+}
+
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>:<span class="hljs-number">768px</span>) {
+  <span class="hljs-selector-class">.notice</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>
+  }
+
+  <span class="hljs-selector-class">.icon-laba</span> {
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">1px</span>
+  }
+}
+
+<span class="hljs-comment">/* 页面正文宽度 */</span>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1080px</span>) {
+
+  <span class="hljs-selector-class">.post-content</span>,
+  post-custom {
+    <span class="hljs-attribute">box-sizing</span>   : border-box;
+    <span class="hljs-attribute">padding-left</span> : <span class="hljs-number">5%</span>;
+    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">5%</span>;
+  }
+}</code></pre></div><p><strong>4、layout.ejs 文件修改</strong></p><p><code>layout.ejs</code> 位于 themes\fluid\layout\ 路径，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs ejs">&lt;!-- 不要格式化 --&gt;
+&lt;main&gt;
+  &lt;% if(is_post() || page.layout === '404') { %&gt;
+    &lt;%- body %&gt;
+  &lt;% } else { %&gt;
+    &lt;div class="container nopadding-x-md"&gt;
+      &lt;!-- 公告栏 --&gt;
+      &lt;div id="board" class="notice_board"&gt;
+        &lt;% if (theme.SeeYue_Mod.broadcast.enable){ %&gt;
+        &lt;%- partial('_partials/plugins/broadcast.ejs') %&gt;
+        &lt;% } %&gt;
+      &lt;/div&gt;
+      &lt;div id="board"
+        // ...
+    &lt;/div&gt;
+  &lt;% } %&gt;
+  // ...
+
+&lt;/main&gt;</code></pre></div><h2 id="1-4-文末结束语">1.4 文末结束语</h2><p><strong>1、_config.fluid.yml 文件修改</strong></p><p>增加以下代码</p><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">SeeYue_Mod:</span>
+  <span class="hljs-comment">#...</span>
+  <span class="hljs-comment"># 文末结束语</span>
+  <span class="hljs-attr">conclusion:</span>
+    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-comment"># 结束语样式，使用 Fluid 主题内置的 Tag 插件，详情请看 https://hexo.fluid-dev.com/docs/guide/#tag-%E6%8F%92%E4%BB%B6</span>
+    <span class="hljs-attr">style:</span> <span class="hljs-string">success</span>
+    <span class="hljs-attr">content:</span> <span class="hljs-string">"如有疑问，请在评论区留言，我会尽快回复。觉得文章不错？点击右侧按钮复制文章链接。"</span></code></pre></div><p><strong>2、post.ejs 文件修改</strong></p><p><code>post.ejs</code> 位于 themes\fluid\layout\ 路径，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs ejs">&lt;!-- 不要格式化 --&gt;
+&lt;article class="post-content mx-auto"&gt;
+            &lt;!-- ... --&gt;
+            &lt;% if (page.encrypt === true) { %&gt;
+              &lt;%- inject_point('postMarkdownBegin') %&gt;
+              &lt;%- page.content %&gt;
+              &lt;%- partial('_partials/plugins/encrypt') %&gt;
+              &lt;%- inject_point('postMarkdownEnd') %&gt;
+            &lt;% } else { %&gt;
+              &lt;div class="markdown-body"&gt;
+                &lt;%- inject_point('postMarkdownBegin') %&gt;
+                &lt;%- page.content %&gt;
+                &lt;%- inject_point('postMarkdownEnd') %&gt;
+              &lt;/div&gt;
+            &lt;% } %&gt;
+            &lt;!-- 添加的代码 --&gt;
+            &lt;% if (theme.SeeYue_Mod.conclusion.enable) { %&gt;
+              &lt;div class="note note-&lt;%- theme.SeeYue_Mod.conclusion.style %&gt;"&gt;&lt;%- theme.SeeYue_Mod.conclusion.content %&gt;&lt;/div&gt;
+            &lt;% } %&gt;
+            &lt;div&gt;
+            &lt;hr/&gt;
+             &lt;!-- ... --&gt;
+
+&lt;/article&gt;</code></pre></div><h2 id="1-5-复制文章链接按钮">1.5 复制文章链接按钮</h2><p>看完一篇文章，觉得写得不错，想要分享给他人，却发现浏览器仅支持复制链接，不支持复制文章标题。现在可以通过以下代码实现复制文章链接和标题。效果如下：</p><div class="code-wrapper"><pre><code class="hljs markdown">Fluid 主题修改记录 - 望月家：
+https://blog.seeyue.top/posts/b78a5b0f/</code></pre></div><p><strong>1、_config.fluid.yml 文件修改</strong></p><p>增加以下代码</p><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">SeeYue_Mod:</span>
+  <span class="hljs-comment">#...</span>
+  <span class="hljs-comment"># 文章页</span>
+  <span class="hljs-attr">post:</span>
+    <span class="hljs-comment"># 复制文章链接按钮</span>
+    <span class="hljs-attr">copy_post_link_btn:</span> <span class="hljs-literal">true</span></code></pre></div><p><strong>2、post.ejs 文件修改</strong></p><p><code>post.ejs</code> 位于 themes\fluid\layout\ 路径，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs ejs">&lt;% if (theme.SeeYue_Mod.conclusion.enable) { %&gt;
+  &lt;div class="note note-&lt;%- theme.SeeYue_Mod.conclusion.style %&gt;" style="display: -webkit-flex;justify-content: space-between;"&gt;&lt;span&gt;&lt;%- theme.SeeYue_Mod.conclusion.content %&gt;&lt;/span&gt;
+      &lt;!-- 添加的代码 --&gt;
+    &lt;% if (theme.SeeYue_Mod.post.copy_post_link_btn) { %&gt;
+      &lt;span&gt;
+        &lt;span style="cursor: pointer;" id="copyButton" title="复制文章链接"&gt;&lt;i class="iconfont icon-fenxiang"&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;script&gt;
+          document.getElementById('copyButton').addEventListener('click', function () {
+            var articleTitle = document.title.trim(); // 获取网页标题
+            var articleLink = window.location.href.split('#')[0]; // 去除锚点
+            var copiedText = articleTitle + "：" + "\n" + articleLink;
+            navigator.clipboard.writeText(copiedText)
+              .then(function () {
+                var button = document.getElementById('copyButton');
+                button.innerHTML = '&lt;i style="font-weight: bold" class="iconfont icon-check"&gt;&lt;/i&gt;';
+                setTimeout(function () {
+                  button.innerHTML = '&lt;i class="iconfont icon-fenxiang"&gt;&lt;/i&gt;';
+                }, 2000);
+              })
+              .catch(function (err) {
+                console.error('复制失败: ', err);
+              });
+          });
+        &lt;/script&gt;
+      &lt;/span&gt;
+    &lt;% } %&gt;
+  &lt;/div&gt;
+&lt;% } %&gt;</code></pre></div><h2 id="1-6-图片编号">1.6 图片编号</h2><p>j进入 themes\fluid\source\js\ 路径，打开 <code>plugins.js</code></p><div class="code-wrapper"><pre><code class="hljs js">  <span class="hljs-attr">imageCaption</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">selector</span>) {
+    <span class="hljs-comment">// ...</span>
+  },
+<span class="hljs-comment">// 以上代码替换为以下代码</span>
+  <span class="hljs-attr">imageCaption</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">selector</span>) {
+    <span class="hljs-keyword">if</span> (!<span class="hljs-variable constant_">CONFIG</span>.<span class="hljs-property">image_caption</span>.<span class="hljs-property">enable</span>) { <span class="hljs-keyword">return</span>; }
+    <span class="hljs-keyword">var</span> imageCount = <span class="hljs-number">0</span>; <span class="hljs-comment">// 初始化图片数量</span>
+    <span class="hljs-title function_">jQuery</span>(selector || <span class="hljs-string">`.markdown-body &gt; p &gt; img, .markdown-body &gt; figure &gt; img,</span>
+<span class="hljs-string">    .markdown-body &gt; p &gt; a.fancybox, .markdown-body &gt; figure &gt; a.fancybox`</span>).<span class="hljs-title function_">each</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> $target = <span class="hljs-title function_">jQuery</span>(<span class="hljs-variable language_">this</span>);
+      <span class="hljs-keyword">var</span> $figcaption = $target.<span class="hljs-title function_">next</span>(<span class="hljs-string">'figcaption'</span>);
+      <span class="hljs-keyword">if</span> ($figcaption.<span class="hljs-property">length</span> !== <span class="hljs-number">0</span>) {
+        $figcaption.<span class="hljs-title function_">addClass</span>(<span class="hljs-string">'image-caption'</span>);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">var</span> imageTitle = $target.<span class="hljs-title function_">attr</span>(<span class="hljs-string">'title'</span>) || $target.<span class="hljs-title function_">attr</span>(<span class="hljs-string">'alt'</span>);
+        imageCount++; <span class="hljs-comment">// 增加图片数量</span>
+        <span class="hljs-keyword">if</span> (imageTitle) {
+          $target.<span class="hljs-title function_">after</span>(<span class="hljs-string">`&lt;figcaption aria-hidden="true" class="image-caption"&gt;图 <span class="hljs-subst">${imageCount}</span>&amp;nbsp&amp;nbsp<span class="hljs-subst">${imageTitle}</span>&lt;/figcaption&gt;`</span>);
+        } <span class="hljs-keyword">else</span> {
+          $target.<span class="hljs-title function_">after</span>(<span class="hljs-string">`&lt;figcaption aria-hidden="true" class="image-caption"&gt;图 <span class="hljs-subst">${imageCount}</span>&lt;/figcaption&gt;`</span>);
+        }
+      }
+    });
+  },</code></pre></div><h2 id="1-7-更新主题">1.7 更新主题</h2><p>如果你按照上述方法修改了主题源代码，并且希望在升级主题时保留主题的修改，你可以使用 Beyond Compare 4 进行文件夹对比。通过比较每个文件，你可以将主题作者所做的更改合并到你的主题源码中。</p><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.scootersoftware.com/">Scooter Software - Home of Beyond Compare</a></p><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.ghxi.com/beyondcompare.html">Beyond Compare v4.4.7.28397 修改版 - 果核剥壳</a></p><p><strong>Beyond Compare 4 重置专业版使用时长</strong></p><ol><li><code>win</code> + <code>s</code>，打开 Windows 搜索，搜索注册表编辑器，并打开。</li><li>查找「计算机\HKEY_CURRENT_USER\SOFTWARE\Scooter Software\Beyond Compare 4」。</li><li>右侧内容栏选中 CacheID 一行，删除。</li></ol><h2 id="参考">参考</h2><ul><li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://5c61b2c4.kiyanyang.pages.dev/posts/c4dd4019/">使用 Hexo 过滤器实现 Fluid 主题的代码折叠 - KiyanYang’s Blog</a></li></ul></div><div class="note note-success" style="display:-webkit-flex;justify-content:space-between"><span>如有疑问，请在评论区留言，我会尽快回复。觉得文章不错？点击右侧按钮可复制文章链接。</span> <span><span style="cursor:pointer" id="copyButton" title="复制文章链接"><i class="iconfont icon-fenxiang"></i></span><script>document.getElementById("copyButton").addEventListener("click",(function(){var n=document.title.trim()+"：\n"+window.location.href.split("#")[0];navigator.clipboard.writeText(n).then((function(){var n=document.getElementById("copyButton");n.innerHTML='<i style="font-weight: bold" class="iconfont icon-check"></i>',setTimeout((function(){n.innerHTML='<i class="iconfont icon-fenxiang"></i>'}),2e3)})).catch((function(n){console.error("复制失败: ",n)}))}))</script></span></div><div><hr><div><div class="post-metas my-3"><div class="post-meta mr-3 d-flex align-items-center"><i class="iconfont icon-category"></i> <span class="category-chains"><span class="category-chain"><a href="/categories/Hexo/" class="category-chain-item">Hexo</a></span></span></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/Fluid/" class="print-no-link"><i class="iconfont icon-hash"></i>Fluid</a></div></div><div class="license-box my-3"><div class="license-title"><div>Fluid 主题修改记录</div><div><a href="https://blog.seeyue.top/posts/b78a5b0f/">https://blog.seeyue.top/posts/b78a5b0f/</a></div></div><div class="license-meta"><div class="license-meta-item"><div>作者</div><div>See Yue</div></div><div class="license-meta-item license-meta-date"><div>发布于</div><div>2024年3月3日</div></div><div class="license-meta-item license-meta-date"><div>更新于</div><div>2024年3月19日</div></div><div class="license-meta-item"><div>许可协议</div><div><a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="external nofollow noreferrer"><span class="hint--top hint--rounded" aria-label="BY - 署名"><i class="iconfont icon-by"></i> </span></a><a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="external nofollow noreferrer"><span class="hint--top hint--rounded" aria-label="NC - 非商业性使用"><i class="iconfont icon-nc"></i> </span></a><a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="external nofollow noreferrer"><span class="hint--top hint--rounded" aria-label="SA - 相同方式共享"><i class="iconfont icon-sa"></i></span></a></div></div></div><div class="license-icon iconfont"></div></div><div class="post-prevnext my-3"><article class="post-prev col-6"><a href="/posts/724cc09d/" title="使用 GitHub Actions 自动化部署 Hexo 博客"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">使用 GitHub Actions 自动化部署 Hexo 博客</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="/posts/4a17b152/" title="云服务器折腾记"><span class="hidden-mobile">云服务器折腾记</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article id="comments" lazyload><div style="font-family:HarmonyOS;font-size:1.4rem;margin-bottom:10px;font-weight:bolder"><i class="iconfont icon-pinglun"></i> 评论区</div><div id="waline"></div><script type="text/javascript">Fluid.utils.loadComments("#waline",(function(){Fluid.utils.createCssLink("https://lib.baomitu.com/waline/2.15.8/waline.min.css"),Fluid.utils.createScript("https://lib.baomitu.com/waline/2.15.8/waline.min.js",(function(){var i=Object.assign({serverURL:"https://seeyueer-waline.vercel.app",path:"window.location.pathname",meta:["nick","mail","link"],requiredMeta:["nick","mail"],lang:"zh-CN",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],dark:'html[data-user-color-scheme="dark"]',wordLimit:0,pageSize:10},{el:"#waline",path:window.location.pathname,comment:!0});Waline.init(i),Fluid.utils.waitElementVisible("#waline .vcontent",(()=>{var i="#waline .vcontent img:not(.vemoji)";Fluid.plugins.imageCaption(i),Fluid.plugins.fancyBox(i)}))}))}))</script><noscript>Please enable JavaScript to view the comments</noscript></article></div></article></div></div></div><div class="side-col d-none d-lg-block col-lg-2"><aside class="sidebar" style="margin-left:-1rem"><div id="toc"><p class="toc-header" style="font-family:HarmonyOS_Sans_SC_Regular"><i class="iconfont icon-list"></i> <span>目录</span></p><div class="toc-body" id="toc-body"></div></div></aside></div></div></div><a id="scroll-comment-button" aria-label="Comment" href="#conments" role="button"><i class="iconfont icon-pinglun" aria-hidden="true"></i> </a><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div></main><footer><div class="footer-inner"><div class="footer-content"><div style="font-size:.85rem;margin:.25rem 0"><span><a href="https://hexo.io" target="_blank" rel="nofollow noopener">Hexo</a></span> <i class="iconfont icon-love" style="font-weight:700"></i> <span><a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">Fluid</a></span> <i class="iconfont icon-love" style="font-weight:700"></i> <span><a href="https://blog.seeyue.top/about" target="_blank" rel="nofollow noopener"><span>See Yue</span></a></span></div><div style="font-size:.85rem;margin:.25rem 0"><span>Copyright <i class="iconfont icon-copyright"></i> 2021 — 2024<span style="margin-left:10px">All Rights Reserved</span></span></div><div style="font-size:.85rem;margin:.25rem 0"><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span><script src="/js/duration.js?v=ea583c4093"></script><span class="wordcount">，已有 44k 字</span></div><div style="font-size:.85rem;margin:.25rem 0">本站由 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"><span class="upyun-logo"><i class="iconfont icon-upyun"></i> </span></a>提供 CDN 加速/云存储服务</div></div><div class="statistics"><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span></div><div class="beian"><span><a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">蜀ICP备2021032128号</a></span></div></div></footer><script src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js"></script><link rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css"><script>NProgress.configure({showSpinner:!1,trickleSpeed:100}),NProgress.start(),window.addEventListener("load",(function(){NProgress.done()}))</script><script src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js"></script><script src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script><script src="/js/events.js?v=3b97ea6f66"></script><script src="/js/plugins.js?v=bf3b353a1e"></script><script src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js"></script><script>!function(t,e){var i=Fluid.plugins.typing,n=e.getElementById("subtitle");n&&i&&i(n.getAttribute("data-typed-text"))}(window,document)</script><script>var enableCodeCollapse=!0,maxDisplayLines=20,enableCodeCopy=!0,enableCodeLanguage=!0,codeLang={abap:"ABAP",apl:"APL",asciiarmor:"ASCII Armor",asn1:"ASN.1",asp:"ASP",assembly:"Assembly",bash:"Bash",basic:"BASIC",c:"C",csharp:"C#",cpp:"C++",cassandra:"Cassandra",ceylon:"Ceylon",clike:"C-like",clojure:"Clojure",cmake:"CMake",cobol:"COBOL",coffeescript:"CoffeeScript",commonlisp:"Common Lisp",cql:"CQL",crystal:"Crystal",css:"CSS",cypher:"Cypher",cython:"Cython",d:"D",dart:"Dart",diff:"Diff",django:"Django",dockerfile:"Dockerfile",dtd:"DTD",dylan:"Dylan",ejs:"EJS",elixir:"Elixir",elm:"Elm",embeddedjs:"EmbeddedJS",erb:"ERB",erlang:"Erlang",fsharp:"F#",flow:"Flow",forth:"Forth",fortran:"Fortran",gas:"Gas",gfm:"GFM",gherkin:"Gherkin",glsl:"GLSL",go:"Go",groovy:"Groovy",handlebars:"Handlebars",haskell:"Haskell",haxe:"Haxe",hive:"Hive",htaccess:"htaccess",html:"HTML",http:"HTTP",hxml:"HXML",idl:"IDL",ini:"INI",jade:"Jade",java:"Java",javascript:"JavaScript",jinja2:"Jinja2",js:"JavaScript",json:"JSON",jsp:"JSP",jsx:"JSX",julia:"Julia",kotlin:"Kotlin",latex:"LaTeX",less:"Less",lisp:"Lisp",livescript:"LiveScript",lua:"Lua",makefile:"Makefile",mariadb:"MariaDB",markdown:"Markdown",mathematica:"Mathematica",matlab:"MATLAB",mbox:"Mbox",mermaid:"Mermaid",mssql:"MSSQL",mysql:"MySQL",nginx:"Nginx",nim:"Nim",nsis:"NSIS",objc:"Objective-C",ocaml:"OCaml",octave:"Octave",oz:"Oz",pascal:"Pascal",pegjs:"PEG.js",perl:"Perl",perl6:"Perl6",pgp:"PGP",php:"PHP",phphtml:"PHP+HTML",plsql:"PL/SQL",postgresql:"PostgreSQL",powershell:"PowerShell",properties:"Properties",protobuf:"Protocol Buffers",pseudocode:"Pseudocode",pug:"Pug",python:"Python",q:"Q",r:"R",react:"React",restructuredtext:"reStructuredText",rst:"RST",ruby:"Ruby",rust:"Rust",sas:"SAS",scala:"Scala",scheme:"Scheme",scss:"SCSS",sequence:"Sequence",sh:"Shell",shell:"Shell",smalltalk:"Smalltalk",solidity:"Solidity",sparql:"SPARQL",spreadsheet:"Spreadsheet",sql:"SQL",sqlite:"SQLite",squirrel:"Squirrel",stata:"Stata",stylus:"Stylus",svelte:"Svelte",swift:"Swift",systemverilog:"SystemVerilog",tcl:"Tcl",tex:"TeX",tiddlywiki:"TiddlyWiki",tikiwiki:"Tiki Wiki",toml:"TOML",ts:"TypeScript",tsx:"TSX",turtle:"Turtle",twig:"Twig",typescript:"TypeScript",v:"V",vb:"VB",vbscript:"VBScript",velocity:"Velocity",verilog:"Verilog",vhdl:"VHDL",visualbasic:"Visual Basic",vue:"Vue",webidl:"Web IDL",wiki:"Wiki",xaml:"XAML",xml:"XML",xmldtd:"XML DTD",xquery:"XQuery",yacas:"Yacas",yaml:"YAML",yara:"YARA"};function getLanguage(e){var a=e.toLowerCase();return a in codeLang?codeLang[a]:e}function getUuiD(){return Math.random().toString(36).substring(2,8)+Date.now().toString(36)}function copyText(e){navigator.clipboard.writeText(e).then((function(){console.log("代码复制成功")})).catch((function(e){console.error("代码复制失败",e)}))}function addCopyButton(e){if(enableCodeCopy){var a=document.createElement("i");a.className="iconfont icon-clipboard copy-code copy-btn",a.addEventListener("click",(function(){var l=e.lastChild;console.log(l),copyText(l.innerText),a.style.display="none";var t=document.createElement("i");t.className="iconfont icon-check copy-btn",e.prepend(t),setTimeout((function(){t.remove(),a.style.display="block"}),1e3)})),e.prepend(a)}}function addCodeCollapse(e){var a=e.firstChild.firstChild.classList[1],l=`collapse-${getUuiD()}`,t=enableCodeCollapse?`<i class="iconfont icon-regular-down" type="button" data-toggle="collapse" data-target="#${l}"></i>`:"",o=enableCodeLanguage?`<span class="code-lang">${getLanguage(a)}</span>`:"",i=e.innerText.split("\n").length>maxDisplayLines+1,s=`<div class="${i&&enableCodeCollapse?"collapse":"collapse show"}" id="${l}">${e.innerHTML}</div>`;if(e.innerHTML=t+o+s,i&&enableCodeCollapse){var r=e.querySelector(".icon-regular-down");r.classList.add("rotate"),r.addEventListener("click",(function(){$(this).removeClass("rotate")}))}}function codeEnhanced(){for(var e=$(".code-wrapper"),a=0;a<e.length;a++){var l=e[a];addCodeCollapse(l),addCopyButton(l)}}$(document).ready(codeEnhanced)</script><script src="/js/img-lazyload.js?v=fab30a410e"></script><script>var relativeDate=function(){var t=document.getElementById("updated-time");if(t){var e=t.textContent,i=/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/,n=e.match(i);if(n){var a=moment(n[0]).fromNow();t.textContent=e.replace(i,a)}t.style.display=""}};Fluid.utils.createScript("https://lib.baomitu.com/moment.js/2.29.4/moment.min.js",(function(){"zh-cn".startsWith("en")?relativeDate():Fluid.utils.createScript("https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js",(function(){relativeDate()}))}))</script><script>Fluid.utils.createScript("https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js",(function(){var t=jQuery("#toc");if(0!==t.length&&window.tocbot){var i=jQuery("#board-ctn").offset().top;window.tocbot.init(Object.assign({tocSelector:"#toc-body",contentSelector:".markdown-body",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",scrollSmooth:!0,includeTitleTags:!0,headingsOffset:-i},CONFIG.toc)),t.find(".toc-list-item").length>0&&t.css("visibility","visible"),Fluid.events.registerRefreshCallback((function(){if("tocbot"in window){tocbot.refresh();var t=jQuery("#toc");if(0===t.length||!tocbot)return;t.find(".toc-list-item").length>0&&t.css("visibility","visible")}}))}}))</script><script>Fluid.utils.createScript("https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js",(function(){window.anchors.options={placement:CONFIG.anchorjs.placement,visible:CONFIG.anchorjs.visible},CONFIG.anchorjs.icon&&(window.anchors.options.icon=CONFIG.anchorjs.icon);var n=(CONFIG.anchorjs.element||"h1,h2,h3,h4,h5,h6").split(","),o=[];for(var s of n)o.push(".markdown-body > "+s.trim());"left"===CONFIG.anchorjs.placement&&(window.anchors.options.class="anchorjs-link-left"),window.anchors.add(o.join(", ")),Fluid.events.registerRefreshCallback((function(){if("anchors"in window){anchors.removeAll();var n=(CONFIG.anchorjs.element||"h1,h2,h3,h4,h5,h6").split(","),o=[];for(var s of n)o.push(".markdown-body > "+s.trim());"left"===CONFIG.anchorjs.placement&&(anchors.options.class="anchorjs-link-left"),anchors.add(o.join(", "))}}))}))</script><script>Fluid.utils.createScript("https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js",(function(){Fluid.plugins.fancyBox()}))</script><script>Fluid.plugins.imageCaption()</script><script defer="defer" src="/js/leancloud.js?v=fb4a815ccd"></script><script src="/js/local-search.js?v=9dc47a0b7b"></script><script defer="defer" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/duration.js?v=ea583c4093"></script><script src="/js/boot.js?v=929e458171"></script><noscript><div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div></noscript></body></html>
